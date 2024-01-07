@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "T2ClnWXp6R3l20k3XjuRQyJ49FchFGxBUlLnI4R7xdo=",
+  "Hash": "OG3jNwlZ50DP5y2l1CKTJAaF3H2TKor58w5C3FaD+aA=",
   "Source": "BileriumCafe_POS",
   "BasePath": "/",
   "Mode": "Root",
@@ -16,6 +16,40 @@
     }
   ],
   "Assets": [
+    {
+      "Identity": "C:\\Users\\shres\\.nuget\\packages\\mudblazor\\6.11.2\\staticwebassets\\MudBlazor.min.css",
+      "SourceId": "MudBlazor",
+      "SourceType": "Package",
+      "ContentRoot": "C:\\Users\\shres\\.nuget\\packages\\mudblazor\\6.11.2\\staticwebassets\\",
+      "BasePath": "_content/MudBlazor",
+      "RelativePath": "MudBlazor.min.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "C:\\Users\\shres\\.nuget\\packages\\mudblazor\\6.11.2\\staticwebassets\\MudBlazor.min.css"
+    },
+    {
+      "Identity": "C:\\Users\\shres\\.nuget\\packages\\mudblazor\\6.11.2\\staticwebassets\\MudBlazor.min.js",
+      "SourceId": "MudBlazor",
+      "SourceType": "Package",
+      "ContentRoot": "C:\\Users\\shres\\.nuget\\packages\\mudblazor\\6.11.2\\staticwebassets\\",
+      "BasePath": "_content/MudBlazor",
+      "RelativePath": "MudBlazor.min.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "C:\\Users\\shres\\.nuget\\packages\\mudblazor\\6.11.2\\staticwebassets\\MudBlazor.min.js"
+    },
     {
       "Identity": "D:\\Application Development\\BileriumCafe_POS\\BileriumCafe_POS\\BileriumCafe_POS\\obj\\Debug\\net7.0-windows10.0.19041.0\\win10-x64\\scopedcss\\bundle\\BileriumCafe_POS.styles.css",
       "SourceId": "BileriumCafe_POS",

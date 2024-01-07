@@ -30,29 +30,29 @@
     <AppXManifest Include="D:\Application Development\BileriumCafe_POS\BileriumCafe_POS\BileriumCafe_POS\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2024-01-07T05:23:55.950</Modified>
+      <Modified>2024-01-07T14:59:05.815</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="D:\Application Development\BileriumCafe_POS\BileriumCafe_POS\BileriumCafe_POS\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2024-01-07T05:23:55.247</Modified>
+      <Modified>2024-01-07T14:27:19.756</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Application Development\BileriumCafe_POS\BileriumCafe_POS\BileriumCafe_POS\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\BileriumCafe_POS.runtimeconfig.json">
       <PackagePath>BileriumCafe_POS.runtimeconfig.json</PackagePath>
-      <Modified>2024-01-07T05:23:54.668</Modified>
+      <Modified>2024-01-07T12:59:19.073</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Application Development\BileriumCafe_POS\BileriumCafe_POS\BileriumCafe_POS\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\BileriumCafe_POS.dll">
       <PackagePath>BileriumCafe_POS.dll</PackagePath>
-      <Modified>2024-01-07T05:23:52.213</Modified>
+      <Modified>2024-01-07T14:59:04.894</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Application Development\BileriumCafe_POS\BileriumCafe_POS\BileriumCafe_POS\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\apphost.exe">
       <PackagePath>BileriumCafe_POS.exe</PackagePath>
-      <Modified>2024-01-07T05:23:52.246</Modified>
+      <Modified>2024-01-07T14:59:04.948</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Application Development\BileriumCafe_POS\BileriumCafe_POS\BileriumCafe_POS\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\BileriumCafe_POS.deps.json">
       <PackagePath>BileriumCafe_POS.deps.json</PackagePath>
-      <Modified>2024-01-07T05:23:54.388</Modified>
+      <Modified>2024-01-07T12:59:19.071</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\shres\.nuget\packages\microsoft.netcore.app.runtime.win-x64\7.0.11\runtimes\win-x64\lib\net7.0\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
@@ -810,21 +810,21 @@
       <PackagePath>WinRT.Runtime.dll</PackagePath>
       <Modified>2023-06-09T20:10:26.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\shres\.nuget\packages\microsoft.aspnetcore.authorization\7.0.0\lib\net7.0\Microsoft.AspNetCore.Authorization.dll">
+    <AppxPackagedFile Include="C:\Users\shres\.nuget\packages\microsoft.aspnetcore.authorization\7.0.14\lib\net7.0\Microsoft.AspNetCore.Authorization.dll">
       <PackagePath>Microsoft.AspNetCore.Authorization.dll</PackagePath>
-      <Modified>2022-10-19T06:09:04.000</Modified>
+      <Modified>2023-10-23T21:34:00.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\shres\.nuget\packages\microsoft.aspnetcore.components\7.0.0\lib\net7.0\Microsoft.AspNetCore.Components.dll">
+    <AppxPackagedFile Include="C:\Users\shres\.nuget\packages\microsoft.aspnetcore.components\7.0.14\lib\net7.0\Microsoft.AspNetCore.Components.dll">
       <PackagePath>Microsoft.AspNetCore.Components.dll</PackagePath>
-      <Modified>2022-10-19T06:06:24.000</Modified>
+      <Modified>2023-10-23T21:33:08.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\shres\.nuget\packages\microsoft.aspnetcore.components.forms\7.0.0\lib\net7.0\Microsoft.AspNetCore.Components.Forms.dll">
+    <AppxPackagedFile Include="C:\Users\shres\.nuget\packages\microsoft.aspnetcore.components.forms\7.0.14\lib\net7.0\Microsoft.AspNetCore.Components.Forms.dll">
       <PackagePath>Microsoft.AspNetCore.Components.Forms.dll</PackagePath>
-      <Modified>2022-10-19T06:06:46.000</Modified>
+      <Modified>2023-10-23T21:33:54.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\shres\.nuget\packages\microsoft.aspnetcore.components.web\7.0.0\lib\net7.0\Microsoft.AspNetCore.Components.Web.dll">
+    <AppxPackagedFile Include="C:\Users\shres\.nuget\packages\microsoft.aspnetcore.components.web\7.0.14\lib\net7.0\Microsoft.AspNetCore.Components.Web.dll">
       <PackagePath>Microsoft.AspNetCore.Components.Web.dll</PackagePath>
-      <Modified>2022-10-19T06:08:20.000</Modified>
+      <Modified>2023-10-23T21:34:08.000</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\shres\.nuget\packages\microsoft.aspnetcore.components.webview\7.0.0\lib\net7.0\Microsoft.AspNetCore.Components.WebView.dll">
       <PackagePath>Microsoft.AspNetCore.Components.WebView.dll</PackagePath>
@@ -834,9 +834,9 @@
       <PackagePath>Microsoft.AspNetCore.Components.WebView.Maui.dll</PackagePath>
       <Modified>2023-06-30T16:58:20.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\shres\.nuget\packages\microsoft.aspnetcore.metadata\7.0.0\lib\net7.0\Microsoft.AspNetCore.Metadata.dll">
+    <AppxPackagedFile Include="C:\Users\shres\.nuget\packages\microsoft.aspnetcore.metadata\7.0.14\lib\net7.0\Microsoft.AspNetCore.Metadata.dll">
       <PackagePath>Microsoft.AspNetCore.Metadata.dll</PackagePath>
-      <Modified>2022-10-19T06:09:02.000</Modified>
+      <Modified>2023-10-23T21:33:56.000</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\shres\.nuget\packages\microsoft.extensions.configuration\7.0.0\lib\net7.0\Microsoft.Extensions.Configuration.dll">
       <PackagePath>Microsoft.Extensions.Configuration.dll</PackagePath>
@@ -886,6 +886,14 @@
       <PackagePath>Microsoft.Extensions.FileSystemGlobbing.dll</PackagePath>
       <Modified>2022-10-18T16:15:08.000</Modified>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\shres\.nuget\packages\microsoft.extensions.localization\7.0.14\lib\net7.0\Microsoft.Extensions.Localization.dll">
+      <PackagePath>Microsoft.Extensions.Localization.dll</PackagePath>
+      <Modified>2023-10-23T21:34:32.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\shres\.nuget\packages\microsoft.extensions.localization.abstractions\7.0.14\lib\net7.0\Microsoft.Extensions.Localization.Abstractions.dll">
+      <PackagePath>Microsoft.Extensions.Localization.Abstractions.dll</PackagePath>
+      <Modified>2023-10-23T21:34:04.000</Modified>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\shres\.nuget\packages\microsoft.extensions.logging\7.0.0\lib\net7.0\Microsoft.Extensions.Logging.dll">
       <PackagePath>Microsoft.Extensions.Logging.dll</PackagePath>
       <Modified>2022-10-18T16:16:04.000</Modified>
@@ -898,9 +906,9 @@
       <PackagePath>Microsoft.Extensions.Logging.Debug.dll</PackagePath>
       <Modified>2022-10-18T16:16:10.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\shres\.nuget\packages\microsoft.extensions.options\7.0.0\lib\net7.0\Microsoft.Extensions.Options.dll">
+    <AppxPackagedFile Include="C:\Users\shres\.nuget\packages\microsoft.extensions.options\7.0.1\lib\net7.0\Microsoft.Extensions.Options.dll">
       <PackagePath>Microsoft.Extensions.Options.dll</PackagePath>
-      <Modified>2022-10-18T16:15:16.000</Modified>
+      <Modified>2023-01-19T23:54:36.000</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\shres\.nuget\packages\microsoft.extensions.primitives\7.0.0\lib\net7.0\Microsoft.Extensions.Primitives.dll">
       <PackagePath>Microsoft.Extensions.Primitives.dll</PackagePath>
@@ -910,9 +918,9 @@
       <PackagePath>Microsoft.Graphics.Canvas.Interop.dll</PackagePath>
       <Modified>2023-05-31T20:07:52.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\shres\.nuget\packages\microsoft.jsinterop\7.0.0\lib\net7.0\Microsoft.JSInterop.dll">
+    <AppxPackagedFile Include="C:\Users\shres\.nuget\packages\microsoft.jsinterop\7.0.14\lib\net7.0\Microsoft.JSInterop.dll">
       <PackagePath>Microsoft.JSInterop.dll</PackagePath>
-      <Modified>2022-10-19T06:08:08.000</Modified>
+      <Modified>2023-10-23T21:33:08.000</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\shres\.nuget\packages\microsoft.maui.graphics\7.0.92\lib\net7.0-windows10.0.19041\Microsoft.Maui.Graphics.dll">
       <PackagePath>Microsoft.Maui.Graphics.dll</PackagePath>
@@ -978,6 +986,10 @@
       <PackagePath>Microsoft.WindowsAppRuntime.Bootstrap.Net.dll</PackagePath>
       <Modified>2022-11-08T19:31:22.000</Modified>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\shres\.nuget\packages\mudblazor\6.11.2\lib\net7.0\MudBlazor.dll">
+      <PackagePath>MudBlazor.dll</PackagePath>
+      <Modified>2023-12-18T22:15:18.000</Modified>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\shres\.nuget\packages\system.io.pipelines\7.0.0\lib\net7.0\System.IO.Pipelines.dll">
       <PackagePath>System.IO.Pipelines.dll</PackagePath>
       <Modified>2022-10-18T16:15:28.000</Modified>
@@ -1006,13 +1018,21 @@
       <PackagePath>AboutAssets.txt</PackagePath>
       <Modified>2024-01-07T05:18:26.553</Modified>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\shres\.nuget\packages\mudblazor\6.11.2\staticwebassets\MudBlazor.min.css">
+      <PackagePath>wwwroot\_content\MudBlazor\MudBlazor.min.css</PackagePath>
+      <Modified>2023-12-18T22:14:46.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\shres\.nuget\packages\mudblazor\6.11.2\staticwebassets\MudBlazor.min.js">
+      <PackagePath>wwwroot\_content\MudBlazor\MudBlazor.min.js</PackagePath>
+      <Modified>2023-12-18T22:14:48.000</Modified>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Application Development\BileriumCafe_POS\BileriumCafe_POS\BileriumCafe_POS\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\scopedcss\bundle\BileriumCafe_POS.styles.css">
       <PackagePath>wwwroot\BileriumCafe_POS.styles.css</PackagePath>
-      <Modified>2024-01-07T05:18:56.863</Modified>
+      <Modified>2024-01-07T09:59:49.967</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Application Development\BileriumCafe_POS\BileriumCafe_POS\BileriumCafe_POS\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\scopedcss\projectbundle\BileriumCafe_POS.bundle.scp.css">
       <PackagePath>wwwroot\BileriumCafe_POS.bundle.scp.css</PackagePath>
-      <Modified>2024-01-07T05:18:56.863</Modified>
+      <Modified>2024-01-07T09:59:49.967</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Application Development\BileriumCafe_POS\BileriumCafe_POS\BileriumCafe_POS\wwwroot\css\app.css">
       <PackagePath>wwwroot\css\app.css</PackagePath>
@@ -1068,7 +1088,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Application Development\BileriumCafe_POS\BileriumCafe_POS\BileriumCafe_POS\wwwroot\index.html">
       <PackagePath>wwwroot\index.html</PackagePath>
-      <Modified>2024-01-07T05:18:26.388</Modified>
+      <Modified>2024-01-07T06:10:00.995</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Application Development\BileriumCafe_POS\BileriumCafe_POS\BileriumCafe_POS\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\sp\splashSplashScreen.scale-100.png">
       <PackagePath>splashSplashScreen.scale-100.png</PackagePath>
@@ -1297,10 +1317,6 @@
     <AppxPackagedFile Include="D:\Application Development\BileriumCafe_POS\BileriumCafe_POS\BileriumCafe_POS\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-400.png">
       <PackagePath>dotnet_bot.scale-400.png</PackagePath>
       <Modified>2024-01-07T05:19:01.747</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\Application Development\BileriumCafe_POS\BileriumCafe_POS\BileriumCafe_POS\Shared\MainLayout.razor.css">
-      <PackagePath>Shared\MainLayout.razor.css</PackagePath>
-      <Modified>2024-01-07T05:18:26.557</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Application Development\BileriumCafe_POS\BileriumCafe_POS\BileriumCafe_POS\Shared\NavMenu.razor.css">
       <PackagePath>Shared\NavMenu.razor.css</PackagePath>

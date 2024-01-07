@@ -1,3 +1,5 @@
+wwwroot\_content\MudBlazor\MudBlazor.min.css
+wwwroot\_content\MudBlazor\MudBlazor.min.js
 OpenSans-Regular.ttf
 appicon.ico
 appiconLargeTile.scale-100.png
@@ -58,7 +60,6 @@ splashSplashScreen.scale-400.png
 wwwroot\BileriumCafe_POS.styles.css
 wwwroot\BileriumCafe_POS.bundle.scp.css
 AboutAssets.txt
-Shared\MainLayout.razor.css
 Shared\NavMenu.razor.css
 wwwroot\css\app.css
 wwwroot\css\bootstrap\bootstrap.min.css

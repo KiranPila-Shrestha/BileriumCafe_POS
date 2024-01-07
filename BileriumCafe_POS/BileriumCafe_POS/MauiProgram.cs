@@ -1,5 +1,7 @@
 ﻿using BileriumCafe_POS.Data;
 using Microsoft.Extensions.Logging;
+using MudBlazor.Services;
+using BileriumCafe_POS.Services;
 
 namespace BileriumCafe_POS
 {
@@ -21,7 +23,8 @@ namespace BileriumCafe_POS
 		builder.Services.AddBlazorWebViewDeveloperTools();
 		builder.Logging.AddDebug();
 #endif
-
+            builder.Services.AddMudServices();
+            builder.Services.AddScoped<UserServices>();
             builder.Services.AddSingleton<WeatherForecastService>();
 
             return builder.Build();

@@ -1,0 +1,138 @@
+﻿
+<!-- SignIn.razor -->
+
+@page "/"
+@using MudBlazor
+@layout EmptyLayout
+@inject NavigationManager Navigation
+@inject UserServices UserServices
+<style>
+    body {
+        background-color: #f5f5f5;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+    }
+
+    .signin-container {
+        height: 100vh;
+        display: flex;
+        width: 370px;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .signin-form {
+        max-width: 400px;
+        width: 100%;
+    }
+
+    .signin-paper {
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        padding: 16px;
+        background-color: #ffffff;
+        border-radius: 4px;
+    }
+
+    .signin-heading {
+        font-size: 1.5rem;
+        font-weight: bold;
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+
+    .signin-button {
+        margin-top: 1rem;
+    }
+
+    .logo {
+        align-items: center;
+    }
+
+    /* Add this style to center the MudContainer */
+    .center-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+    }
+</style>
+<MudContainer Class="center-container">
+    <MudGrid Class="signin-container">
+        <MudGridItem class="signin-form">
+        <div style="padding: 10px; text-align: center; font-size: 27px;">
+                <CafeName />
+            </div>
+        <div class="signin-paper">
+            <div class="signin-heading">Login</div>
+            <MudForm>
+        
+                <MudTextField Variant="Variant.Outlined" @bind-Value="_password"  Label="Password" T="string" InputType="InputType.Password" />
+
+        
+
+                <div><br /></div>
+
+                @if (!string.IsNullOrEmpty(_errorMessage))
+                {
+                    <MudAlert Severity="Severity.Error">@_errorMessage</MudAlert>
+                }
+                else if (!string.IsNullOrEmpty(_successMessage))
+                {
+                    <MudAlert Severity="Severity.Success">@_successMessage</MudAlert>
+                }
+
+                <MudButton Variant="Variant.Filled" Color="Color.Primary" Class="signin-button"  @onclick="HandleLogin" >
+                    Sign In
+                </MudButton>
+            </MudForm>
+        </div>
+        </MudGridItem>
+    </MudGrid>
+</MudContainer>
+@code {
+    // private GlobalState _globalState { get; set; }
+
+   
+    private string _password { get; set; } = "1234";
+    private string _role { get; set; } = "Admin";
+
+    [CascadingParameter]
+    private GlobalState _globalState { get; set; }
+
+    private User _currentUser { get; set; }
+
+
+    private string _errorMessage = "";
+    private string _successMessage = "";
+
+     private void HandleLogin()
+
+    {
+        try
+        {
+            if ( string.IsNullOrEmpty(_password))
+            {
+                _errorMessage = "All fields are required.";
+                return;
+            }
+
+            _currentUser = UserServices.LoginUser(_password);
+            _globalState.CurrentUser = _currentUser;
+
+            Navigation.NavigateTo("/dashboard");
+
+            _errorMessage = "";
+            _successMessage = "Login Sucessfull";
+            _password = "";
+        }
+        catch (Exception e)
+        {
+            _errorMessage = e.Message;
+            Console.WriteLine(e);
+        }
+    }
+    
+}

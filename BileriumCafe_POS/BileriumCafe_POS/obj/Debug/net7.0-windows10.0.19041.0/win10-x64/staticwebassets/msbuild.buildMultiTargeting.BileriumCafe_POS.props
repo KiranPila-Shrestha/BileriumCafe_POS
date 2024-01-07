@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\BileriumCafe_POS.props" />
+</Project>

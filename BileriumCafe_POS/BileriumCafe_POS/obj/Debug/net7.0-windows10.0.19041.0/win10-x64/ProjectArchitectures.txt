@@ -1,0 +1,1 @@
+D:\Application Development\BileriumCafe_POS\BileriumCafe_POS\BileriumCafe_POS\BileriumCafe_POS.csproj;x64

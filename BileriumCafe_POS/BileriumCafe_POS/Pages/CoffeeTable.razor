@@ -1,0 +1,67 @@
+@page "/Coffee_List"
+@inject CoffeeService CoffeeService
+@inject NavigationManager Navigation
+
+<MudPaper Height="160px" Width="100%">
+    <MudContainer Fixed="true" Style="height:100px;">
+
+        <MudText Class="pt-4" Typo="Typo.h3">Lists of Coffee</MudText>
+
+    </MudContainer>
+
+
+    <MudTable Items="@Elements">
+        <HeaderContent>
+            <MudTh Style="font-weight:bold">Coffee Name</MudTh>
+            <MudTh Style="font-weight:bold">Price</MudTh>
+            <MudTh Style="font-weight:bold">Action</MudTh>
+        </HeaderContent>
+
+
+        <RowTemplate>
+            <MudTd DataLabel="CoffeeName">@context.CoffeeName</MudTd>
+            <MudTd DataLabel="Price">@context.Price</MudTd>
+            <MudTd DataLabel="Action">
+                <MudButton Variant="Variant.Outlined" Color="Color.Secondary">Add To Cart</MudButton>
+                <MudButton Variant="Variant.Filled" StartIcon="@Icons.Material.Filled.Edit" Color="Color.Error" OnClick="@(() => EditCoffee(context.Id))">Edit</MudButton>
+            </MudTd>
+        </RowTemplate>
+    </MudTable>
+</MudPaper>
+
+
+
+@code {
+    // GetCoffee gets the coffee from JSON file
+
+
+    private IEnumerable<Coffee> Elements = new List<Coffee>();
+
+    [CascadingParameter]
+    private GlobalState _globalState { get; set; }
+    private bool isUserStaff { get; set; }
+
+
+    protected override void OnInitialized()
+    {
+        Elements = CoffeeService.GetCoffee();
+        // isUserStaff = _globalState.CurrentUser.ToString() == "staff";
+        // _globalState.AppBarTitle = "Items";
+    }
+
+    private void AddToCart(Coffee coffee)
+    {
+        // Implement logic to add coffee to cart
+        // You may use a service or manage the cart state accordingly
+    }
+
+    private void EditCoffee(Guid coffeeID)
+    {
+        Navigation.NavigateTo($"/Coffee_List/{coffeeID}");
+        // Implement logic to edit coffee details
+        // You may use a modal or navigate to another page for editing
+    }
+
+
+
+}

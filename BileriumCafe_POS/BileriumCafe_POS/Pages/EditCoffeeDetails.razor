@@ -1,0 +1,111 @@
+﻿@page "/Coffee_List/{coffeeID}"
+@inject NavigationManager NavigationManager
+@inject CoffeeService CoffeeService
+@inject ISnackbar Snackbar
+
+<div style="padding-top:10px; margin-left:30px; padding-bottom:10px">
+    <MudText Class="pt-4" Typo="Typo.h3">Update Coffee</MudText>
+</div>
+
+<div style="padding-left:30px;">
+    <MudGrid>
+        <MudItem xs="12" sm="7">
+            <MudCard>
+                <MudCardContent>
+                    <MudTextField Label="Coffee Name" @bind-Value="_coffee.CoffeeName" />
+                    <MudTextField Label="Price" InputType="@InputType.Number" Class="mt-3" @bind-Value="_coffee.Price" />
+                    <MudTextField Label="Password" T="string" InputType="InputType.Password" Class="mt-3" @bind-Value="_currentPassword" />
+                </MudCardContent>
+
+                @if (!string.IsNullOrEmpty(_errorMessage))
+                {
+                    <MudAlert Severity="Severity.Error">@_errorMessage</MudAlert>
+                }
+
+
+
+                <MudCardActions>
+
+                    <MudButton OnClick="BackToCoffeeListPage" ButtonType="ButtonType.Submit" Variant="Variant.Outlined" Color="Color.Error">Back</MudButton>
+
+                    <MudButton OnClick="HandleCoffeeUpdate" Variant="Variant.Outlined" Color="Color.Primary" Class="ml-auto">Update Coffee</MudButton>
+
+                </MudCardActions>
+            </MudCard>
+        </MudItem>
+    </MudGrid>
+</div>
+
+@code {
+
+    [Parameter]
+    public string coffeeID { get; set; }
+
+    [CascadingParameter] private GlobalState _globalState { get; set; }
+
+    private string _currentPassword { get; set; }
+
+    private Coffee _coffee { get; set; }
+
+    private string _errorMessage { get; set; } = "";
+
+
+    protected override void OnInitialized()
+    {
+        _coffee = CoffeeService.GetCofeeByID(coffeeID);
+    }
+
+
+    private void HandleCoffeeUpdate()
+    {
+        try
+        {
+            if (String.IsNullOrEmpty(_currentPassword))
+            {
+                _errorMessage = "Please enter your Password";
+                return;
+            }
+
+            // If coffee name is empty
+            if (String.IsNullOrEmpty(_coffee.CoffeeName))
+            {
+                _errorMessage = "Please enter Coffee Name";
+                return;
+            }
+
+            // Price
+            if (_coffee.Price <= 0)
+            {
+                _errorMessage = "Please enter a valid price";
+                return;
+            }
+
+            // Check if password match
+            if (_currentPassword != _globalState.CurrentUser.Password)
+            {
+                _errorMessage = "Invalid password";
+                return;
+            }
+
+
+            _errorMessage = "";
+
+            Snackbar.Add("Coffee Details updated sucessfully", Severity.Success);
+
+            CoffeeService.UpdateCoffeeDetails(_coffee);
+
+            BackToCoffeeListPage();
+
+        }
+
+        catch (Exception ex)
+        {
+            _errorMessage = ex.Message;
+        }
+    }
+
+    protected void BackToCoffeeListPage()
+    {
+        NavigationManager.NavigateTo("/Coffee_List");
+    }
+}

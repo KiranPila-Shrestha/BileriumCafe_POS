@@ -18,5 +18,10 @@ namespace BileriumCafe_POS.Utils
         {
             return Path.Combine(GetDesktopDirectoryPath(), "users.json");
         }
+        public static string GetCoffeFile()
+        {
+            return Path.Combine(GetDesktopDirectoryPath(), "coffee.json");
+        }
+
     }
 }

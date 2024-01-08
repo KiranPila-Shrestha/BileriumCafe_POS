@@ -1,4 +1,6 @@
 ﻿@inherits LayoutComponentBase
+@inject UserServices UserServices
+
 <MudThemeProvider />
 <MudDialogProvider />
 <MudSnackbarProvider />
@@ -13,6 +15,5 @@
 
 
 @code {
-    private GlobalState _globalState = new();
-
+    private GlobalState _globalState { get; set; } = new GlobalState();
 }

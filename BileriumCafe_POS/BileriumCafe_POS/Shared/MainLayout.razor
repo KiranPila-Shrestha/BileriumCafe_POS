@@ -1,8 +1,6 @@
 ﻿@inherits LayoutComponentBase
-
-<MudThemeProvider />
-<MudDialogProvider />
-<MudSnackbarProvider />
+@inject CoffeeService CoffeeService
+@layout ParentLayout
 
 <div class="page">
     <div style="padding-top:10px">
@@ -10,10 +8,17 @@
     </div>
 
     <main>
-        
             <MudMainContent>
                 @Body
             </MudMainContent>
 
     </main>
 </div>
+
+@code{
+
+    protected override void OnInitialized()
+    {
+        CoffeeService.SeedCofeeDetails();
+    }
+}

@@ -10,7 +10,6 @@ namespace BileriumCafe_POS.Models
 {
     public class User
     {
-
         public string Role { get; set; }
         public string Password { get; set; }
     }

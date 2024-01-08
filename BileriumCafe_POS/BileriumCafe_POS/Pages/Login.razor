@@ -87,11 +87,16 @@
                 <MudButton Variant="Variant.Filled" Color="Color.Primary" Class="signin-button"  @onclick="HandleLogin" >
                     Sign In
                 </MudButton>
+                    
             </MudForm>
         </div>
         </MudGridItem>
     </MudGrid>
 </MudContainer>
+
+<h1>
+   @_globalState.CurrentUser?.Password
+</h1>
 @code {
     // private GlobalState _globalState { get; set; }
 
@@ -119,8 +124,7 @@
                 return;
             }
 
-            _currentUser = UserServices.LoginUser(_password);
-            _globalState.CurrentUser = _currentUser;
+            _globalState.CurrentUser = UserServices.LoginUser(_password);
 
             Navigation.NavigateTo("/dashboard");
 

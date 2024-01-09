@@ -22,8 +22,8 @@
             <MudTd DataLabel="CoffeeName">@context.CoffeeName</MudTd>
             <MudTd DataLabel="Price">@context.Price</MudTd>
             <MudTd DataLabel="Action">
-                <MudButton Variant="Variant.Outlined" Color="Color.Secondary">Add To Cart</MudButton>
-                <MudButton Variant="Variant.Filled" StartIcon="@Icons.Material.Filled.Edit" Color="Color.Error" OnClick="@(() => EditCoffee(context.Id))">Edit</MudButton>
+                <MudButton Variant="Variant.Filled" Color="Color.Secondary">Add To Cart</MudButton>
+                <MudButton Variant="Variant.Outlined" StartIcon="@Icons.Material.Filled.Edit" Color="Color.Primary" OnClick="@(() => EditCoffee(context.Id))">Edit</MudButton>
             </MudTd>
         </RowTemplate>
     </MudTable>

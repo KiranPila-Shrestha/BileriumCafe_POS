@@ -1,5 +1,5 @@
 ﻿
-<!-- SignIn.razor -->
+<!-- Login.razor -->
 
 @page "/"
 @using MudBlazor
@@ -42,10 +42,24 @@
         text-align: center;
         margin-bottom: 1rem;
     }
+    /* CSS for Cafe Title */
+    .cafe-title {
+        color: brown; /* Text color */
+        font-size: 24px; /* Font size */
+        font-weight: bold; /* Font weight */
+        text-align: center; /* Text alignment */
+        margin-bottom: 20px; /* Bottom margin */
+    }
+
+      
+
+    
 
     .signin-button {
         margin-top: 1rem;
     }
+    
+
 
     .logo {
         align-items: center;
@@ -62,9 +76,9 @@
 <MudContainer Class="center-container">
     <MudGrid Class="signin-container">
         <MudGridItem class="signin-form">
-        <div style="padding: 10px; text-align: center; font-size: 27px;">
-                <CafeName />
-            </div>
+        <MudTypography Typo="Typo.h2" Class="cafe-title">
+     BisleriumCafe_POS
+    </MudTypography>﻿
         <div class="signin-paper">
             <div class="signin-heading">Login</div>
             <MudForm>
@@ -84,8 +98,8 @@
                     <MudAlert Severity="Severity.Success">@_successMessage</MudAlert>
                 }
 
-                <MudButton Variant="Variant.Filled" Color="Color.Primary" Class="signin-button"  @onclick="HandleLogin" >
-                    Sign In
+                <MudButton Variant="Variant.Filled" Color="Color.Secondary" Class="signin-button"  @onclick="HandleLogin" >
+                    Log In
                 </MudButton>
                     
             </MudForm>

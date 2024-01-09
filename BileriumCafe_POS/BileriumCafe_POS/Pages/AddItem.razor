@@ -1,0 +1,63 @@
+@page "/add-in-items"
+@inject AddItemService AddItemService
+@inject NavigationManager Navigation
+
+<MudPaper Height="160px" Width="100%">
+    <MudContainer Fixed="true" Style="height:100px;">
+
+        <MudText Class="pt-4" Typo="Typo.h3">Lists of Items</MudText>
+
+    </MudContainer>
+
+
+    <MudTable Items="@Elements">
+        <HeaderContent>
+            <MudTh Style="font-weight:bold">Add Item</MudTh>
+            <MudTh Style="font-weight:bold">Price</MudTh>
+            <MudTh Style="font-weight:bold">Action</MudTh>
+        </HeaderContent>
+
+
+        <RowTemplate>
+            <MudTd DataLabel="ProductName">@context.ProductName</MudTd>
+            <MudTd DataLabel="Price">@context.Price</MudTd>
+            <MudTd DataLabel="Action">
+                <MudButton Variant="Variant.Filled" Color="Color.Secondary">Add To Cart</MudButton>
+                <MudButton Variant="Variant.Outlined" StartIcon="@Icons.Material.Filled.Edit" Color="Color.Primary" OnClick="@(() => EditAddIns(context.Id))">Edit</MudButton>
+            </MudTd>
+        </RowTemplate>
+    </MudTable>
+</MudPaper>
+
+
+
+
+
+
+@code {
+
+
+    private IEnumerable<AddIn> Elements = new List<AddIn>();
+
+    [CascadingParameter]
+    private GlobalState _globalState { get; set; }
+
+    private bool isUserStaff { get; set; }
+
+    protected override void OnInitialized()
+    {
+        Elements = AddItemService.GetAddItem();
+        isUserStaff = _globalState.CurrentUser.Password.ToString() == "staff";
+    }
+
+
+
+    private void EditAddIns(Guid addInsID)
+    {
+        Navigation.NavigateTo($"/add-in-items/{addInsID}");
+    }
+
+
+
+}
+

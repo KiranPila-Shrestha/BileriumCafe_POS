@@ -1,4 +1,15 @@
-﻿using BileriumCafe_POS.Utils;
+﻿
+
+
+
+
+
+
+
+
+
+
+using BileriumCafe_POS.Utils;
 using BileriumCafe_POS.Models;
 
 using System.Text.Json;
@@ -14,9 +25,10 @@ namespace BileriumCafe_POS.Services
             new() { Id =  Guid.NewGuid(), CoffeeName = "Cappuccino", Price = 150.0 },
             new() {Id =  Guid.NewGuid(),  CoffeeName = "Latte", Price = 170.0 },
             new() {Id =  Guid.NewGuid(),  CoffeeName = "Mocha", Price = 140.0 },
-            new() {Id =  Guid.NewGuid(),  CoffeeName = "Ristretto", Price = 130.0 },
+            new() {Id =  Guid.NewGuid(),  CoffeeName = "Capicinno", Price = 130.0 },
             new() {Id =  Guid.NewGuid(),  CoffeeName = "Americano", Price = 120.0 },
-            new() {Id =  Guid.NewGuid(),  CoffeeName = "Espresso", Price = 110.0 }
+            new() {Id =  Guid.NewGuid(),  CoffeeName = "Espresso", Price = 110.0 },
+            new() {Id =  Guid.NewGuid(),  CoffeeName = "CafeeLate Hot", Price = 110.0 }
 
         };
 
@@ -54,7 +66,7 @@ namespace BileriumCafe_POS.Services
         }
 
 
-        // Seeds JSON file with coffees if JSON file is empty.
+        // Seeds JSON file if it is empty
         public void SeedCofeeDetails()
         {
             List<Coffee> coffeeList = GetCoffee();
@@ -67,7 +79,7 @@ namespace BileriumCafe_POS.Services
             }
         }
 
-        // Get Retrieves a coffee by its ID from the JSON file.
+        // Get coffee by id
         public Coffee GetCofeeByID(String coffeeID)
         {
             List<Coffee> coffeeList = GetCoffee();
@@ -75,7 +87,7 @@ namespace BileriumCafe_POS.Services
             return coffee;
         }
 
-        //Coffee Update
+        //Coffee Updated
         public void UpdateCoffeeDetails(Coffee coffee)
         {
             List<Coffee> coffeeList = GetCoffee();

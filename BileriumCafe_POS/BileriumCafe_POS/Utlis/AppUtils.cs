@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿
 namespace BileriumCafe_POS.Utils
 {
     internal class AppUtils
@@ -21,6 +16,11 @@ namespace BileriumCafe_POS.Utils
         public static string GetCoffeFile()
         {
             return Path.Combine(GetDesktopDirectoryPath(), "coffee.json");
+        }
+
+        public static string GetProductFile()
+        {
+            return Path.Combine(GetDesktopDirectoryPath(), "addIn.json");
         }
 
     }

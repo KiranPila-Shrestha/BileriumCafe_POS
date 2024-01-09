@@ -1,0 +1,72 @@
+@* <!-- OrderItemDashboard.razor -->
+@page "/Order-in-items"
+<MudTable Items="@orderItems" Class="mb-4">
+    <HeaderContent>
+        <MudTh>Item Name</MudTh>
+        <MudTh>Item Type</MudTh>
+        <MudTh>Price</MudTh>
+        <MudTh>Quantity</MudTh>
+        <MudTh>Total</MudTh>
+        <MudTh>Action</MudTh>
+    </HeaderContent>
+    <RowTemplate Context="orderItem">
+        <MudTd>@orderItem.ItemName</MudTd>
+        <MudTd>@orderItem.ItemType</MudTd>
+        <MudTd>@orderItem.Price</MudTd>
+        <MudTd>
+            <MudNumericField @bind-Value="orderItem.Quantity" />
+        </MudTd>
+        <MudTd>@(orderItem.Price * orderItem.Quantity)</MudTd>
+            <MudTd>
+                <MudButton Icon="MudIcons.Add" Color="Color.Primary" OnClick="@(() => AddQuantity(orderItem))" />
+                <MudButton Icon="MudIcons.Remove" Color="Color.Secondary" OnClick="@(() => SubtractQuantity(orderItem))" />
+                <MudButton Icon="MudIcons.Clear" Color="Color.Warning" OnClick="@(() => ClearItem(orderItem))" />
+            </MudTd>
+        </RowTemplate>
+    </MudTable>
+    <MudButton Color="Color.Success" OnClick="@Checkout">Checkout</MudButton>
+
+    @code {
+    List<OrderItem> orderItems = new List<OrderItem>
+    {
+        new OrderItem { ItemName = "Item1", ItemType = "Type1", Price = 10.0, Quantity = 1 },
+        new OrderItem { ItemName = "Item2", ItemType = "Type2", Price = 15.0, Quantity = 2 },
+        // Add more initial items as needed
+    };
+
+    void AddQuantity(OrderItem orderItem)
+    {
+        // Add logic to increase quantity
+        orderItem.Quantity++;
+    }
+
+    void SubtractQuantity(OrderItem orderItem)
+    {
+        // Add logic to decrease quantity
+        if (orderItem.Quantity > 0)
+        {
+            orderItem.Quantity--;
+        }
+    }
+
+    void ClearItem(OrderItem orderItem)
+    {
+        // Add logic to remove the item from the list
+        orderItems.Remove(orderItem);
+    }
+
+    void Checkout()
+    {
+        // Add logic for checkout (e.g., navigate to checkout page)
+        // You can pass the orderItems list to the checkout page for further processing
+    }
+
+    public class OrderItem
+    {
+        public string ItemName { get; set; }
+        public string ItemType { get; set; }
+        public double Price { get; set; }
+        public int Quantity { get; set; }
+    }
+}
+ *@

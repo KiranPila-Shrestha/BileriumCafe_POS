@@ -1,7 +1,8 @@
-﻿@page "/Coffee_List/{coffeeID}"
+﻿@page "/add-in-items/{addInsID}"
 @inject NavigationManager NavigationManager
-@inject CoffeeService CoffeeService
+@inject AddItemService AddItemService
 @inject ISnackbar Snackbar
+
 
 <div style="padding-top:10px; margin-left:30px; padding-bottom:10px">
     <MudText Class="pt-4" Typo="Typo.h3">Update Coffee</MudText>
@@ -12,8 +13,8 @@
         <MudItem xs="12" sm="7">
             <MudCard>
                 <MudCardContent>
-                    <MudTextField Label="Coffee Name" @bind-Value="_coffee.CoffeeName" />
-                    <MudTextField Label="Price" InputType="@InputType.Number" Class="mt-3" @bind-Value="_coffee.Price" />
+                    <MudTextField Label="Product Name" @bind-Value="_addIns.ProductName" />
+                    <MudTextField Label="Price" InputType="@InputType.Number" Class="mt-3" @bind-Value="_addIns.Price" />
                     <MudTextField Label="Password" T="string" InputType="InputType.Password" Class="mt-3" @bind-Value="_currentPassword" />
                 </MudCardContent>
 
@@ -26,9 +27,9 @@
 
                 <MudCardActions>
 
-                    <MudButton OnClick="BackToCoffeeListPage" ButtonType="ButtonType.Submit" Variant="Variant.Outlined" Color="Color.Error">Back</MudButton>
+                    <MudButton OnClick="BackToAddInsListPage" ButtonType="ButtonType.Submit" Variant="Variant.Outlined" Color="Color.Error">Back</MudButton>
 
-                    <MudButton OnClick="HandleCoffeeUpdate" Variant="Variant.Outlined" Color="Color.Secondary" Class="ml-auto">Update Coffee</MudButton>
+                    <MudButton OnClick="HandleAddInsUpdate" Variant="Variant.Outlined" Color="Color.Primary" Class="ml-auto">Update Coffee</MudButton>
 
                 </MudCardActions>
             </MudCard>
@@ -39,24 +40,25 @@
 @code {
 
     [Parameter]
-    public string coffeeID { get; set; }
+    public string addInsID { get; set; }
 
-    [CascadingParameter] private GlobalState _globalState { get; set; }
+    [CascadingParameter]
+    private GlobalState _globalState { get; set; }
 
     private string _currentPassword { get; set; }
 
-    private Coffee _coffee { get; set; }
+    private AddIn _addIns { get; set; }
 
     private string _errorMessage { get; set; } = "";
 
 
     protected override void OnInitialized()
     {
-        _coffee = CoffeeService.GetCofeeByID(coffeeID);
+        _addIns = AddItemService.GetAddInsByID(addInsID);
     }
 
 
-    private void HandleCoffeeUpdate()
+    private void HandleAddInsUpdate()
     {
         try
         {
@@ -66,22 +68,23 @@
                 return;
             }
 
-            // If coffee name is empty
-            if (String.IsNullOrEmpty(_coffee.CoffeeName))
+            // COffee Name is empty
+            if (String.IsNullOrEmpty(_addIns.ProductName))
             {
                 _errorMessage = "Please enter Coffee Name";
                 return;
             }
 
-            // Price
-            if (_coffee.Price <= 0)
+            // Price checking
+            if (_addIns.Price <= 0)
             {
                 _errorMessage = "Please enter a valid price";
                 return;
             }
 
-            // Check if password match
-            if (_currentPassword != _globalState.CurrentUser.Password)
+            // Checking password
+            if (_currentPassword != _globalState.CurrentUser.Role)
+               
             {
                 _errorMessage = "Invalid password";
                 return;
@@ -90,11 +93,11 @@
 
             _errorMessage = "";
 
-            Snackbar.Add("Coffee Details updated sucessfully", Severity.Success);
+            Snackbar.Add("AddIns Details updated sucessfully", Severity.Success);
 
-            CoffeeService.UpdateCoffeeDetails(_coffee);
+            AddItemService.UpdateAddInsDetails(_addIns);
 
-            BackToCoffeeListPage();
+            BackToAddInsListPage();
 
         }
 
@@ -104,8 +107,8 @@
         }
     }
 
-    protected void BackToCoffeeListPage()
+    protected void BackToAddInsListPage()
     {
-        NavigationManager.NavigateTo("/Coffee_List");
+        NavigationManager.NavigateTo("/add-in-items");
     }
 }

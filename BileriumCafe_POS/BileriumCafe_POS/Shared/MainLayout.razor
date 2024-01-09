@@ -1,5 +1,6 @@
 ﻿@inherits LayoutComponentBase
 @inject CoffeeService CoffeeService
+ @inject AddItemService AddItemService 
 @layout ParentLayout
 
 <div class="page">
@@ -20,5 +21,7 @@
     protected override void OnInitialized()
     {
         CoffeeService.SeedCofeeDetails();
+       AddItemService.SeedAddIns();
     }
+    
 }

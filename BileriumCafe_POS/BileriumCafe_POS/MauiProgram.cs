@@ -27,6 +27,7 @@ namespace BileriumCafe_POS
             builder.Services.AddScoped<UserServices>();
             builder.Services.AddSingleton<WeatherForecastService>();
             builder.Services.AddSingleton<CoffeeService>();
+            builder.Services.AddSingleton<AddItemService>();
 
             return builder.Build();
         }

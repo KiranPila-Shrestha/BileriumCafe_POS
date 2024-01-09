@@ -1,6 +1,8 @@
 @page "/Coffee_List"
 @inject CoffeeService CoffeeService
 @inject NavigationManager Navigation
+@inject OrderItemService OrderItemService
+@inject ISnackbar Snackbar
 
 <MudPaper Height="160px" Width="100%">
     <MudContainer Fixed="true" Style="height:100px;">
@@ -22,7 +24,8 @@
             <MudTd DataLabel="CoffeeName">@context.CoffeeName</MudTd>
             <MudTd DataLabel="Price">@context.Price</MudTd>
             <MudTd DataLabel="Action">
-                <MudButton Variant="Variant.Filled" Color="Color.Secondary">Add To Cart</MudButton>
+                <MudButton Variant="Variant.Filled" Color="Color.Secondary" OnClick="@(() => AddToCart(context.Id, context.Price, context.CoffeeName))">Add To Cart</MudButton>
+                
                 <MudButton Variant="Variant.Outlined" StartIcon="@Icons.Material.Filled.Edit" Color="Color.Primary" OnClick="@(() => EditCoffee(context.Id))">Edit</MudButton>
             </MudTd>
         </RowTemplate>
@@ -49,17 +52,21 @@
         // _globalState.AppBarTitle = "Items";
     }
 
-    private void AddToCart(Coffee coffee)
+    // Implement logic to add coffee to cart
+    private void AddToCart(Guid coffeeID, double itemPrice, string coffeeType)
     {
-        // Implement logic to add coffee to cart
-        // You may use a service or manage the cart state accordingly
-    }
+        OrderItemService.AddItemInOrderItemsList(_globalState.OrderItems, coffeeID, coffeeType, "coffee", itemPrice);
 
+        Snackbar.Add($"{coffeeType} is Added to cart", Severity.Success);
+        
+       
+    }
+    // Implement logic to edit coffee details
     private void EditCoffee(Guid coffeeID)
     {
         Navigation.NavigateTo($"/Coffee_List/{coffeeID}");
-        // Implement logic to edit coffee details
-        // You may use a modal or navigate to another page for editing
+       
+       
     }
 
 

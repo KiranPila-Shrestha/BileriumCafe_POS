@@ -9,5 +9,6 @@ namespace BileriumCafe_POS.Models
     public class GlobalState
     {
         public User CurrentUser { get; set; }
+        public List<OrderItemModel> OrderItems { get; set; } = new();
     }
 }

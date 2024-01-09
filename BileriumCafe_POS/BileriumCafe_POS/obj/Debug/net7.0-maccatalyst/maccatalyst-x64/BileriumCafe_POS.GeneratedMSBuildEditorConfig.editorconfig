@@ -44,6 +44,13 @@ build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRkSXRlbS5yYXpvcg==
 build_metadata.AdditionalFiles.RelativePath = 
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/Application Development/BileriumCafe_POS/BileriumCafe_POS/BileriumCafe_POS/Pages/CheckOut.razor]
+build_metadata.AdditionalFiles.GenKind = 
+build_metadata.AdditionalFiles.ManifestResourceName = 
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2hlY2tPdXQucmF6b3I=
+build_metadata.AdditionalFiles.RelativePath = 
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/Application Development/BileriumCafe_POS/BileriumCafe_POS/BileriumCafe_POS/Pages/CoffeeTable.razor]
 build_metadata.AdditionalFiles.GenKind = 
 build_metadata.AdditionalFiles.ManifestResourceName = 
@@ -97,6 +104,13 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.GenKind = 
 build_metadata.AdditionalFiles.ManifestResourceName = 
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcT3JkZXJJdGVtcy5yYXpvcg==
+build_metadata.AdditionalFiles.RelativePath = 
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Application Development/BileriumCafe_POS/BileriumCafe_POS/BileriumCafe_POS/Pages/ReportGenerate.razor]
+build_metadata.AdditionalFiles.GenKind = 
+build_metadata.AdditionalFiles.ManifestResourceName = 
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVwb3J0R2VuZXJhdGUucmF6b3I=
 build_metadata.AdditionalFiles.RelativePath = 
 build_metadata.AdditionalFiles.CssScope = 
 

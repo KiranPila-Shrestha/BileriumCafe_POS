@@ -30,13 +30,13 @@
     <AppXManifest Include="D:\Application Development\BileriumCafe_POS\BileriumCafe_POS\BileriumCafe_POS\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2024-01-09T02:40:25.894</Modified>
+      <Modified>2024-01-09T12:39:54.806</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="D:\Application Development\BileriumCafe_POS\BileriumCafe_POS\BileriumCafe_POS\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2024-01-09T02:31:13.833</Modified>
+      <Modified>2024-01-09T12:15:33.851</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Application Development\BileriumCafe_POS\BileriumCafe_POS\BileriumCafe_POS\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\BileriumCafe_POS.runtimeconfig.json">
       <PackagePath>BileriumCafe_POS.runtimeconfig.json</PackagePath>
@@ -44,11 +44,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Application Development\BileriumCafe_POS\BileriumCafe_POS\BileriumCafe_POS\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\BileriumCafe_POS.dll">
       <PackagePath>BileriumCafe_POS.dll</PackagePath>
-      <Modified>2024-01-09T02:37:38.678</Modified>
+      <Modified>2024-01-09T12:30:55.742</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Application Development\BileriumCafe_POS\BileriumCafe_POS\BileriumCafe_POS\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\apphost.exe">
       <PackagePath>BileriumCafe_POS.exe</PackagePath>
-      <Modified>2024-01-09T02:37:38.693</Modified>
+      <Modified>2024-01-09T12:30:55.764</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Application Development\BileriumCafe_POS\BileriumCafe_POS\BileriumCafe_POS\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\BileriumCafe_POS.deps.json">
       <PackagePath>BileriumCafe_POS.deps.json</PackagePath>

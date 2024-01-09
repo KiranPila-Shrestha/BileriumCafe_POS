@@ -15,12 +15,25 @@ namespace BileriumCafe_POS.Utils
         }
         public static string GetCoffeFile()
         {
-            return Path.Combine(GetDesktopDirectoryPath(), "coffee.json");
+            return Path.Combine(GetDesktopDirectoryPath(), "coffe.json");
         }
 
         public static string GetProductFile()
         {
             return Path.Combine(GetDesktopDirectoryPath(), "addIn.json");
+        }
+        public static string GetOrderItemListPath()
+        {
+            return Path.Combine(GetDesktopDirectoryPath(), "orderItem.json");
+        }
+
+        public static string GetOrderListPath()
+        {
+            return Path.Combine(GetDesktopDirectoryPath(), "order.json");
+        }
+        public static string GetCustomerListPath()
+        {
+            return Path.Combine(GetDesktopDirectoryPath(), "customer.json");
         }
 
     }

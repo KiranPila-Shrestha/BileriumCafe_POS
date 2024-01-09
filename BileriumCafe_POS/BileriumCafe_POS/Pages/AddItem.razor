@@ -1,6 +1,8 @@
 @page "/add-in-items"
 @inject AddItemService AddItemService
 @inject NavigationManager Navigation
+@inject OrderItemService OrderItemService
+@inject ISnackbar Snackbar
 
 <MudPaper Height="160px" Width="100%">
     <MudContainer Fixed="true" Style="height:100px;">
@@ -22,7 +24,7 @@
             <MudTd DataLabel="ProductName">@context.ProductName</MudTd>
             <MudTd DataLabel="Price">@context.Price</MudTd>
             <MudTd DataLabel="Action">
-                <MudButton Variant="Variant.Filled" Color="Color.Secondary">Add To Cart</MudButton>
+                <MudButton Variant="Variant.Filled" Color="Color.Secondary" OnClick="@(() => AddToCart(context.Id, context.Price, context.ProductName))">Add To Cart</MudButton>
                 <MudButton Variant="Variant.Outlined" StartIcon="@Icons.Material.Filled.Edit" Color="Color.Primary" OnClick="@(() => EditAddIns(context.Id))">Edit</MudButton>
             </MudTd>
         </RowTemplate>
@@ -50,13 +52,20 @@
         isUserStaff = _globalState.CurrentUser.Password.ToString() == "staff";
     }
 
-
-
+    //Implement logic to edit add ins.
     private void EditAddIns(Guid addInsID)
     {
         Navigation.NavigateTo($"/add-in-items/{addInsID}");
     }
+    // Implement logic to add coffee to cart
+    private void AddToCart(Guid addInsID, double Price, string ProductName)
+    {
+        OrderItemService.AddItemInOrderItemsList(_globalState.OrderItems, addInsID, ProductName, "AddIn", Price);
 
+        Snackbar.Add($"{ProductName} is Added to cart", Severity.Success);
+      
+        
+    }
 
 
 }

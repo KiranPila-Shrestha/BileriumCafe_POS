@@ -25,7 +25,7 @@ namespace BileriumCafe_POS.Services
             new() { Id =  Guid.NewGuid(), CoffeeName = "Cappuccino", Price = 150.0 },
             new() {Id =  Guid.NewGuid(),  CoffeeName = "Latte", Price = 170.0 },
             new() {Id =  Guid.NewGuid(),  CoffeeName = "Mocha", Price = 140.0 },
-            new() {Id =  Guid.NewGuid(),  CoffeeName = "Capicinno", Price = 130.0 },
+            new() {Id =  Guid.NewGuid(),  CoffeeName = "MochMadness", Price = 130.0 },
             new() {Id =  Guid.NewGuid(),  CoffeeName = "Americano", Price = 120.0 },
             new() {Id =  Guid.NewGuid(),  CoffeeName = "Espresso", Price = 110.0 },
             new() {Id =  Guid.NewGuid(),  CoffeeName = "CafeeLate Hot", Price = 110.0 }

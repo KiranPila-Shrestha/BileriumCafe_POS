@@ -1,4 +1,5 @@
-﻿<MudPaper Width="250px" Elevation="0" Class="py-1">
+﻿@inject NavigationManager NavManager
+<MudPaper Width="250px" Elevation="0" Class="py-1">
     <MudAppBar Color="Color.Dark">
         <MudText Style="font-weight: normal; font-size: 20px" Class="text-white"><CafeName /></MudText>
     </MudAppBar>
@@ -6,11 +7,25 @@
     <MudNavMenu Style="padding-top:53px" Margin="Margin.Normal" Color="Color.Error">
         <MudNavLink Href="/dashboard" Icon="@Icons.Material.Filled.Dashboard">Dashboard</MudNavLink>
         <MudNavLink Href="/Coffee_List" Icon="@Icons.Material.Filled.Coffee">Coffee Lists</MudNavLink>
-        <MudNavLink Href="add-in-items" Icon="@Icons.Material.Filled.AddCircleOutline">Add Ins</MudNavLink>
-        <MudNavLink Href="Order-in-items" Icon="@Icons.Material.Filled.AddCircleOutline">Order Item</MudNavLink>
-        
+        <MudNavLink Href="add-in-items" Icon="@Icons.Material.Filled.AddBox">Add Ins</MudNavLink>
+        <MudNavLink Href="Order-in-items" Icon="@Icons.Material.Filled.AddShoppingCart">Order Item</MudNavLink>
+        <MudNavLink Href="Report-Generate" Icon="@Icons.Material.Filled.Report">Report</MudNavLink>
 
         
+        <MudButton Color="Color.Error" Class="mx-4" Variant="Variant.Outlined" StartIcon="@Icons.Material.Filled.Login" Href="/" OnClick="handleLogout">LogOut</MudButton>
+
         @* <MudNavLink Href="" Icon="@Icons.Material.Filled.Logout">Sign Out</MudNavLink> *@
     </MudNavMenu>
 </MudPaper>
+
+@code
+{
+    [CascadingParameter] private GlobalState _globalState { set; get; }
+    public void handleLogout()
+    {
+        _globalState.CurrentUser = null;
+        _globalState.OrderItems = new();
+
+        NavManager.NavigateTo("/");
+    }
+}

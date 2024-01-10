@@ -28,10 +28,10 @@ namespace BileriumCafe_POS
             builder.Services.AddSingleton<WeatherForecastService>();
             builder.Services.AddSingleton<CoffeeService>();
             builder.Services.AddSingleton<AddItemService>();
-            builder.Services.AddSingleton<AddItemService>();
             builder.Services.AddSingleton<OrderItemService>();
             builder.Services.AddSingleton<OrderService>();
             builder.Services.AddSingleton<CustomerService>();
+            builder.Services.AddSingleton<ReportService>();
 
             return builder.Build();
         }

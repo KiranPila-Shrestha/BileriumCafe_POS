@@ -12,7 +12,7 @@ namespace BileriumCafe_POS.Models
         public string CustomerName { get; set; }
         public string CustomerAddress { get; set; }
         public string CustomerPhoneNum { get; set; }
-        public bool IsRegularMember { get; set; } = false;
+        public bool RegularMember { get; set; } = false;
         public int RedeemedCoffeeCount { get; set; } = 0;
     }
 }

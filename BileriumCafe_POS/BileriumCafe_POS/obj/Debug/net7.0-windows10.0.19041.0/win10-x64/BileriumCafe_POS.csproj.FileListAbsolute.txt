@@ -352,3 +352,9 @@ D:\Application Development\BileriumCafe_POS\BileriumCafe_POS\BileriumCafe_POS\ob
 D:\Application Development\BileriumCafe_POS\BileriumCafe_POS\BileriumCafe_POS\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\Microsoft.Extensions.Localization.dll
 D:\Application Development\BileriumCafe_POS\BileriumCafe_POS\BileriumCafe_POS\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\Microsoft.Extensions.Localization.Abstractions.dll
 D:\Application Development\BileriumCafe_POS\BileriumCafe_POS\BileriumCafe_POS\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\MudBlazor.dll
+D:\Application Development\BileriumCafe_POS\BileriumCafe_POS\BileriumCafe_POS\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\HarfBuzzSharp.dll
+D:\Application Development\BileriumCafe_POS\BileriumCafe_POS\BileriumCafe_POS\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\QuestPDF.dll
+D:\Application Development\BileriumCafe_POS\BileriumCafe_POS\BileriumCafe_POS\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\SkiaSharp.dll
+D:\Application Development\BileriumCafe_POS\BileriumCafe_POS\BileriumCafe_POS\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\SkiaSharp.HarfBuzz.dll
+D:\Application Development\BileriumCafe_POS\BileriumCafe_POS\BileriumCafe_POS\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\libHarfBuzzSharp.dll
+D:\Application Development\BileriumCafe_POS\BileriumCafe_POS\BileriumCafe_POS\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\libSkiaSharp.dll

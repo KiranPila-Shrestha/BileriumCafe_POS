@@ -5,16 +5,18 @@
     </MudAppBar>
 
     <MudNavMenu Style="padding-top:53px" Margin="Margin.Normal" Color="Color.Error">
+        
+           
+       
         <MudNavLink Href="/dashboard" Icon="@Icons.Material.Filled.Dashboard">Dashboard</MudNavLink>
         <MudNavLink Href="/Coffee_List" Icon="@Icons.Material.Filled.Coffee">Coffee Lists</MudNavLink>
         <MudNavLink Href="add-in-items" Icon="@Icons.Material.Filled.AddBox">Add Ins</MudNavLink>
         <MudNavLink Href="Order-in-items" Icon="@Icons.Material.Filled.AddShoppingCart">Order Item</MudNavLink>
-        <MudNavLink Href="Report-Generate" Icon="@Icons.Material.Filled.Report">Report</MudNavLink>
 
-        
+            <MudNavLink Href="Report-Generate" Icon="@Icons.Material.Filled.Report">Report</MudNavLink>
+        <MudNavLink Match="NavLinkMatch.All" Href="/sales-transactions" Icon="@Icons.Material.Filled.Receipt">Sales Transactions</MudNavLink>
         <MudButton Color="Color.Error" Class="mx-4" Variant="Variant.Outlined" StartIcon="@Icons.Material.Filled.Login" Href="/" OnClick="handleLogout">LogOut</MudButton>
 
-        @* <MudNavLink Href="" Icon="@Icons.Material.Filled.Logout">Sign Out</MudNavLink> *@
     </MudNavMenu>
 </MudPaper>
 

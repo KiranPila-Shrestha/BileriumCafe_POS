@@ -70,6 +70,7 @@ namespace BileriumCafe_POS.Services
             }
 
             List<Customer> customers = GetCustomerListFromJsonFile();
+
             customers.Add(_customer);
 
             SaveCustomerListInJsonFile(customers);

@@ -27,6 +27,7 @@ namespace BileriumCafe_POS.Services
             return JsonSerializer.Deserialize<List<Order>>(json);
         }
 
+
         //Append new order to the order list of json file
         public void PlaceOrder(Order order)
         {
@@ -46,6 +47,8 @@ namespace BileriumCafe_POS.Services
 
             File.WriteAllText(orderListFilePath, json);
         }
+
     }
 }
+
 

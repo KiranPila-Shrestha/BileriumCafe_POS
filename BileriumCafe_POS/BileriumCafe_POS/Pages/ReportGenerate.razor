@@ -1,4 +1,4 @@
-﻿@* @page "/generate-reports"
+﻿@page "/Report-Generate"
 @inject ISnackbar Snackbar
 @inject OrderService OrderServices
 @using QuestPDF.Fluent
@@ -18,9 +18,11 @@
         <MudDatePicker Label="Select Date" Editable="true" @bind-Date="_date" Placeholder="Select Date" />
     </div>
 
+    <p>Selected Date: @(_date.ToString())</p>
+    <p>Selected Report: @_reportType</p>
 </div>
 
-<MudButton Variant="Variant.Filled" Size="Size.Small" Color="Color.Primary" OnClick="HandleGenerateReport">Generate Reportt</MudButton>
+<MudButton Variant="Variant.Filled" Size="Size.Medium" Color="Color.Secondary" OnClick="HandleGenerateReport">Generate Reportt</MudButton>
 
 @code {
     [CascadingParameter] private GlobalState _globalState { get; set; }
@@ -33,7 +35,7 @@
         
     }
 
-    // This method Generates the PDF
+    // This method is call for Generating the PDF
     private void HandleGenerateReport()
     {
         try
@@ -50,9 +52,7 @@
                 return;
             }
 
-            // This report date is converted to respective format
-            // Report Type: Monthly -> MM-yyyy
-            // Report Type: Daily -> dd-MM-yyyy
+            // This report date is converted to respective format: Monthly -> MM-yyyy, Daily -> dd-MM-yyy
             String reportDate;
 
             if (_reportType == "Daily")
@@ -73,7 +73,7 @@
                 return;
             };
 
-            // Get the list of most purchased coffee and add-ins from the filtered orders
+            //  filtered orders of most purchased coffee and add-ins
             Dictionary<string, List<OrderItemModel>> orderItems = ReportService.GenerateMostPurchasedCoffeeAndAddInsList(orders);
 
             Report _report = new()
@@ -87,16 +87,16 @@
                 };
 
             // PDF Setup and Generation
-            QuestPDF.Settings.License = QuestPDF.Infrastructure.LicenseType.Community;
-            ReportDocument document = new ReportDocument(_report);
+             QuestPDF.Settings.License = QuestPDF.Infrastructure.LicenseType.Community;
+             ReportDocument document = new ReportDocument(_report);
             string filePath = Path.Combine(AppUtils.GetDesktopDirectoryPath(), "Report.PDF");
-            document.GeneratePdf(filePath);
+            document.GeneratePdf(filePath);  
+
+            
 
             Snackbar.Add("Reports is generated sucessfully. Please look into the folder", Severity.Success);
 
-            // _date = null;
-            // _reportType = null;
-
+            
         }
         catch (Exception e)
         {
@@ -104,4 +104,4 @@
 
         }
     }
-} *@
+} 

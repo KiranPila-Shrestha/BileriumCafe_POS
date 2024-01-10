@@ -9,7 +9,7 @@
 {
     <MudText Typo="Typo.h6">Enter Customer Phone Number to check details</MudText>
      <div style="width:400px;" class="mt-5">
-        <MudTextField @bind-Value="_customerPhoneNumber" Label="Customer Phone Number" Variant="Variant.Outlined" Class="mb-5" Margin="Margin.Dense"></MudTextField>
+        <MudTextField @bind-Value="_customerPhoneNum" Label="Customer Phone Number" Variant="Variant.Outlined" Class="mb-5" Margin="Margin.Dense"></MudTextField>
     </div>
 
     @if (!string.IsNullOrEmpty(_errorMessage))
@@ -81,9 +81,9 @@
 
             <MudCardContent>
                 <MudTable Items="@Elements"
-                          Hover="@hover"
-                          Bordered="@bordered"
-                          Class="border-0 shadow-none">
+                Hover="@hover"
+                Bordered="@bordered"
+                Class="border-0 shadow-none">
 
                     <ToolBarContent>
                         <MudText Typo="Typo.h6">Order Details</MudText>
@@ -115,14 +115,16 @@
 
                     <MudButton Color="Color.Secondary" Variant="Variant.Filled" OnClick="handleOrderPlace">Place Order</MudButton>
                 </div>
-@*                checkkk *@
+                @*                checkkk *@
                 <div class="d-flex justify-content-between mt-4">
 
                     <div class="">
+                        <MudText Typo="Typo.h6">Total Free Coffees: @_totalFreeCoffeeCount</MudText>
+                        <MudButton Color="Color.Info" Variant="Variant.Filled" Class="mt-2">Reedem</MudButton>
                         @if (_totalFreeCoffeeCount != 0)
                         {
                             <MudText Typo="Typo.h6">Total Free Coffees: @_totalFreeCoffeeCount</MudText>
-                            
+                            <MudButton Color="Color.Info" Variant="Variant.Filled" Class="mt-2" OnClick="HandleFreeCoffeeRedeemption">Reedem</MudButton>
                         }
                     </div>
 
@@ -142,26 +144,29 @@
 
 
 @code {
-    //MudTable Configurations
-    private bool hover = true;
-    private bool bordered = true;
 
     [CascadingParameter] private GlobalState _globalState { get; set; }
 
     private IEnumerable<OrderItemModel> Elements = new List<OrderItemModel>();
+    public double _totalAmount { get; set; } = 0;
+
+    //MudTable Configurations
+    private bool hover = true;
+    private bool bordered = true;
+
+
+    private string _customerPhoneNum { get; set; }
+    private Customer _customer { get; set; }
 
     private string _errorMessage { set; get; }
-    private string _customerPhoneNumber { get; set; }
-    private Customer _customer { get; set; }
-    public double _totalAmount { get; set; } = 0;
+
     private int _step = 1;
     private bool _customerIsMember { get; set; } = false;
 
     private int _totalFreeCoffeeCount { get; set; } = 0;
     public double _discountAmount { get; set; } = 0;
 
-
-    //Validates the customer details to place order
+    //Validates the customer details that place order
     private void validateUserDetails()
     {
         if (string.IsNullOrEmpty(_customer.CustomerName) || string.IsNullOrEmpty(_customer.CustomerAddress) || string.IsNullOrEmpty(_customer.CustomerPhoneNum))
@@ -173,28 +178,39 @@
         _step++;
     }
 
-    //Checks if customer is a member
+    //Checks if customer is already a member.
     private void handleCheckMembership()
     {
-        if (string.IsNullOrEmpty(_customerPhoneNumber))
+        if (string.IsNullOrEmpty(_customerPhoneNum))
         {
             _errorMessage = "Please provide your phone number";
             return;
         }
 
-        _customer = CustomerService.GetCustomerByPhoneNum(_customerPhoneNumber);
+        _customer = CustomerService.GetCustomerByPhoneNum(_customerPhoneNum);
 
         if (_customer == null)
         {
             Snackbar.Add("This customer is not currently amember", Severity.Error);
             _customer = new();
-            _customer.CustomerPhoneNum = _customerPhoneNumber;
+            _customer.CustomerPhoneNum = _customerPhoneNum;
             _step++;
             return;
         }
 
-        //get membership benefit i.e free coffee.
+        //get membership benefit for free coffee.
         _totalFreeCoffeeCount = CustomerService.TotalFreeCoffeeCount(_customer.CustomerPhoneNum);
+        int countTotalFreeCoffee = CustomerService.TotalFreeCoffeeCount(_customer.CustomerPhoneNum);
+
+        // _totalRemainingFreeCoffeeCount = countTotalFreeCoffee;
+        if (countTotalFreeCoffee < 0)
+        {
+            _totalFreeCoffeeCount = 0;
+        }
+        else
+        {
+            _totalFreeCoffeeCount = countTotalFreeCoffee - _customer.RedeemedCoffeeCount;
+        }
         bool isCustomerRegularMember = CustomerService.CheckIfCustomerIsReguralMember(_customer.CustomerPhoneNum);
 
         if (isCustomerRegularMember)
@@ -209,7 +225,20 @@
 
     }
 
-   
+    //  Coffee Redeemption handled after every 10 purchase
+    private void HandleFreeCoffeeRedeemption()
+    {
+        OrderItemService orderItemService = new OrderItemService();
+        Dictionary<string, double> membershipBenifies = orderItemService.RedeemFreeCoffees(_totalFreeCoffeeCount, _globalState.OrderItems);
+
+        //Converting double to integer
+        int redeemedCoffeeCount = (int)membershipBenifies["redeemedCoffeeCount"];
+        _discountAmount = membershipBenifies["discount"];
+
+        CustomerService.UpdateRedeemedCoffeeCount(_customer.CustomerPhoneNum, redeemedCoffeeCount);
+
+        Snackbar.Add($"{redeemedCoffeeCount} coffees are redeemed.", Severity.Success);
+    }
 
 
     protected override void OnInitialized()
@@ -218,21 +247,21 @@
         Elements = _globalState.OrderItems;
         _totalAmount = OrderItemServices.CalculateTotalAmount(Elements);
     }
-
+    //implemented for handling goback buttons.
     private void handleGoBackButton()
     {
         if (_customerIsMember)
         {
             _customerIsMember = false;
             _step = 0;
-            NavigationManager.NavigateTo("/ Order -in -items");
+            NavigationManager.NavigateTo("/Order -in -items");
             return;
         }
 
         _step--;
     }
 
-    //Handles the process of placing an order,
+    //implements placing an order 
     private void handleOrderPlace()
     {
         try

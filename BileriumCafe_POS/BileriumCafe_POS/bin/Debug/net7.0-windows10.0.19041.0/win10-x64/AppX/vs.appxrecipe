@@ -30,29 +30,29 @@
     <AppXManifest Include="D:\Application Development\BileriumCafe_POS\BileriumCafe_POS\BileriumCafe_POS\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2024-01-09T12:39:54.806</Modified>
+      <Modified>2024-01-09T19:02:26.871</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="D:\Application Development\BileriumCafe_POS\BileriumCafe_POS\BileriumCafe_POS\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2024-01-09T12:15:33.851</Modified>
+      <Modified>2024-01-09T18:18:52.107</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Application Development\BileriumCafe_POS\BileriumCafe_POS\BileriumCafe_POS\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\BileriumCafe_POS.runtimeconfig.json">
       <PackagePath>BileriumCafe_POS.runtimeconfig.json</PackagePath>
-      <Modified>2024-01-07T12:59:19.073</Modified>
+      <Modified>2024-01-09T15:17:48.945</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Application Development\BileriumCafe_POS\BileriumCafe_POS\BileriumCafe_POS\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\BileriumCafe_POS.dll">
       <PackagePath>BileriumCafe_POS.dll</PackagePath>
-      <Modified>2024-01-09T12:30:55.742</Modified>
+      <Modified>2024-01-09T19:02:25.862</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Application Development\BileriumCafe_POS\BileriumCafe_POS\BileriumCafe_POS\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\apphost.exe">
       <PackagePath>BileriumCafe_POS.exe</PackagePath>
-      <Modified>2024-01-09T12:30:55.764</Modified>
+      <Modified>2024-01-09T19:02:25.872</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Application Development\BileriumCafe_POS\BileriumCafe_POS\BileriumCafe_POS\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\BileriumCafe_POS.deps.json">
       <PackagePath>BileriumCafe_POS.deps.json</PackagePath>
-      <Modified>2024-01-08T05:34:00.714</Modified>
+      <Modified>2024-01-09T15:17:48.806</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\shres\.nuget\packages\microsoft.netcore.app.runtime.win-x64\7.0.11\runtimes\win-x64\lib\net7.0\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
@@ -810,6 +810,10 @@
       <PackagePath>WinRT.Runtime.dll</PackagePath>
       <Modified>2023-06-09T20:10:26.000</Modified>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\shres\.nuget\packages\harfbuzzsharp\7.3.0\lib\net6.0\HarfBuzzSharp.dll">
+      <PackagePath>HarfBuzzSharp.dll</PackagePath>
+      <Modified>2023-09-20T18:11:30.000</Modified>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\shres\.nuget\packages\microsoft.aspnetcore.authorization\7.0.14\lib\net7.0\Microsoft.AspNetCore.Authorization.dll">
       <PackagePath>Microsoft.AspNetCore.Authorization.dll</PackagePath>
       <Modified>2023-10-23T21:34:00.000</Modified>
@@ -990,9 +994,25 @@
       <PackagePath>MudBlazor.dll</PackagePath>
       <Modified>2023-12-18T22:15:18.000</Modified>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\shres\.nuget\packages\questpdf\2023.12.2\lib\net6.0\QuestPDF.dll">
+      <PackagePath>QuestPDF.dll</PackagePath>
+      <Modified>2024-01-01T16:27:38.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\shres\.nuget\packages\skiasharp\2.88.6\lib\net6.0\SkiaSharp.dll">
+      <PackagePath>SkiaSharp.dll</PackagePath>
+      <Modified>2023-09-20T18:11:34.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\shres\.nuget\packages\skiasharp.harfbuzz\2.88.6\lib\net6.0\SkiaSharp.HarfBuzz.dll">
+      <PackagePath>SkiaSharp.HarfBuzz.dll</PackagePath>
+      <Modified>2023-09-20T18:13:26.000</Modified>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\shres\.nuget\packages\system.io.pipelines\7.0.0\lib\net7.0\System.IO.Pipelines.dll">
       <PackagePath>System.IO.Pipelines.dll</PackagePath>
       <Modified>2022-10-18T16:15:28.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\shres\.nuget\packages\harfbuzzsharp.nativeassets.win32\7.3.0\runtimes\win-x64\native\libHarfBuzzSharp.dll">
+      <PackagePath>libHarfBuzzSharp.dll</PackagePath>
+      <Modified>2023-09-20T18:11:34.000</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\shres\.nuget\packages\microsoft.graphics.win2d\1.0.5.1\runtimes\win10-x64\native\Microsoft.Graphics.Canvas.dll">
       <PackagePath>Microsoft.Graphics.Canvas.dll</PackagePath>
@@ -1001,6 +1021,10 @@
     <AppxPackagedFile Include="C:\Users\shres\.nuget\packages\microsoft.windowsappsdk\1.2.221209.1\runtimes\win10-x64\native\Microsoft.WindowsAppRuntime.Bootstrap.dll">
       <PackagePath>Microsoft.WindowsAppRuntime.Bootstrap.dll</PackagePath>
       <Modified>2022-11-08T19:31:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\shres\.nuget\packages\skiasharp.nativeassets.win32\2.88.6\runtimes\win-x64\native\libSkiaSharp.dll">
+      <PackagePath>libSkiaSharp.dll</PackagePath>
+      <Modified>2023-09-20T18:11:38.000</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files\dotnet\packs\Microsoft.Maui.Controls.Ref.win\7.0.92\ref\net7.0-windows10.0.19041\Microsoft.Maui.Controls.Compatibility.pri">
       <PackagePath>Microsoft.Maui.Controls.Compatibility.pri</PackagePath>
